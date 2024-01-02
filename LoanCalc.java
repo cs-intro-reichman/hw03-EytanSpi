@@ -46,12 +46,7 @@ public class LoanCalc {
     		payment += epsilon;
     		iterationCounter++;
     	}
-    	if (Math.abs(endBalance(loan, rate, n, payment)) <= epsilon) {
-    		return payment;
-    	} else {
-    		System.out.println("Failed to find a solution.");
-    		return Double.NaN;
-    	}
+   		return payment;
     }
     
     /**
