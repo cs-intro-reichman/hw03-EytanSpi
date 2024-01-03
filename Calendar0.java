@@ -9,7 +9,6 @@ public class Calendar0 {
 		int year = Integer.parseInt(args[0]);
 		isLeapYearTest(year);
 		nDaysInMonthTest(year);
-		System.out.println("Hello World!");
 	}
 		 
 	// Tests the isLeapYear function.
