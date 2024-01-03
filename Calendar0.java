@@ -9,6 +9,7 @@ public class Calendar0 {
 		int year = Integer.parseInt(args[0]);
 		isLeapYearTest(year);
 		nDaysInMonthTest(year);
+		System.out.println("Hello World!");
 	}
 		 
 	// Tests the isLeapYear function.
@@ -32,6 +33,7 @@ public class Calendar0 {
 		boolean isLeapYear = (year % 400 == 0);
 		isLeapYear = isLeapYear || (((year % 4) == 0) && (year % 100 != 0));
 		return isLeapYear;
+		
 	}
 	 
 	// Returns the number of days in the given month and year.
