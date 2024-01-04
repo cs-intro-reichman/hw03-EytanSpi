@@ -1,8 +1,8 @@
 /** 
- * Prints the calendars of all the years in the 20th century.
+ * Prints the calendar of a given year
  */
-public class Calendar1 {	
-    // Starting the calendar on 1/1/1900
+public class Calendar {
+     // Starting the calendar on 1/1/1900
 	static int dayOfMonth = 1;   
 	static int month = 1;
 	static int year = 1900;
@@ -10,16 +10,20 @@ public class Calendar1 {
 	static int nDaysInMonth = 31; // Number of days in January
 	
 	/** 
-	 * Prints the calendars of all the years in the 20th century. Also prints the  
-	 * number of Sundays that occured on the first day of the month during this period.
+	 * Prints the calendars of the requested year 
+	 * Also marks the  Sundays that occured on the first day of the month.
 	 */
 	public static void main(String args[]) {
-		// Advances the date and the day-of-the-week from 1/1/1900 till 31/12/1999, inclusive.
+		// Advances the date and the day-of-the-week from 1/1/1900 till the wanted year.
 	   	// Prints each date dd/mm/yyyy in a separate line. If the day is a Sunday, prints "Sunday".	
 		// The following variable, used for debugging purposes, counts how many days were advanced so far.
-	   // int debugDaysCounter = 0; 
+	    // int debugDaysCounter = 0; 
 		int startingSundaysCounter = 0;
-	 	while (year < 2000) {
+        int requestedYear = Integer.parseInt(args[0]);
+        while (year<requestedYear) {
+            advance();
+        }
+	 	while (year == requestedYear) {
 			System.out.print(dayOfMonth + "/" + month + "/" + year);
 			if (dayOfMonth == 1 && dayOfWeek == 1)	 {
 				System.out.print(" Sunday");
@@ -34,7 +38,7 @@ public class Calendar1 {
 	 		//	break;
 	 		//}
         }
-		System.out.println("During the 20th century, " + startingSundaysCounter + " Sundays fell on the first day of the month");
+		// System.out.println("During the 20th century, " + startingSundaysCounter + " Sundays fell on the first day of the month");
 }
 	
 	 // Advances the date (day, month, year) and the day-of-the-week.
