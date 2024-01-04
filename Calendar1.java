@@ -21,12 +21,11 @@ public class Calendar1 {
 		int startingSundaysCounter = 0;
 	 	while (year < 2000) {
 			System.out.print(dayOfMonth + "/" + month + "/" + year);
-			if (dayOfWeek == 1) {
+			if (dayOfWeek == 1 && dayOfMonth == 1) {
 				System.out.print(" Sunday");
-				if (dayOfMonth == 1)	 {
-					startingSundaysCounter++;
-				}
+				startingSundaysCounter++;
 			}
+		
 			System.out.println();
 			advance();
 	 		//debugDaysCounter++;
