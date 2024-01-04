@@ -22,11 +22,9 @@ public class Calendar {
             advance();
         }
 	 	while (year == requestedYear) {
-			System.out.print(dayOfMonth + "/" + month + "/" + year + "    dayofWeek- " + dayOfWeek);
+			System.out.print(dayOfMonth + "/" + month + "/" + year);
 			if (dayOfWeek == 1) {
 				System.out.print(" Sunday");
-				if (dayOfMonth == 1)	 {
-				}
 			}
 			System.out.println();
 			advance();
