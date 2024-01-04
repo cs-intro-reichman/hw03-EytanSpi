@@ -11,7 +11,7 @@ public class Calendar {
 	
 	/** 
 	 * Prints the calendars of the requested year 
-	 * Also marks the  Sundays that occured on the first day of the month.
+	 * Also marks the Sundays that occured on the first day of the month.
 	 */
 	public static void main(String args[]) {
 		// Advances the date and the day-of-the-week from 1/1/1900 till the wanted year.
@@ -22,9 +22,11 @@ public class Calendar {
             advance();
         }
 	 	while (year == requestedYear) {
-			System.out.print(dayOfMonth + "/" + month + "/" + year);
-			if (dayOfMonth == 1 && dayOfWeek == 1)	 {
+			System.out.print(dayOfMonth + "/" + month + "/" + year + "    dayofWeek- " + dayOfWeek);
+			if (dayOfWeek == 1) {
 				System.out.print(" Sunday");
+				if (dayOfMonth == 1)	 {
+				}
 			}
 			System.out.println();
 			advance();
@@ -96,6 +98,6 @@ public class Calendar {
 					 break;
 		}
 		return days;
-        
+
 	}
 }
