@@ -60,7 +60,7 @@ public class LoanCalc {
     	iterationCounter = 0;
     	double lPay = loan/n;
 		//maximum total payment is if the debt increases without paying anything off until the last year.
-		double hPay = (loan * Math.pow((1 + rate), n)) / n;
+		double hPay = (loan * Math.pow((1 + (rate / 100)), n)) / n;
     	double midPay = (lPay + hPay) / 2;
     	double endBal = endBalance(loan, rate, n, midPay);
     		while (Math.abs(endBal) > epsilon) {
