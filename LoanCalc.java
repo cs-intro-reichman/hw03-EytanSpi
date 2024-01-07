@@ -59,11 +59,27 @@ public class LoanCalc {
     public static double bisectionSolver(double loan, double rate, int n, double epsilon) {  
     	iterationCounter = 0;
     	double lPay = loan/n;
-		// maximum possible total payment is if the debt increases without paying anything off until the last year.
-		double hPay = (loan * Math.pow((1 + (rate / 100)), n)) / n;
+		// do the following hPay for optimized seach - maximum possible total payment is if the debt increases without paying anything off until the last year.
+		// double hPay = (loan * Math.pow((1 + (rate / 100)), n)) / n;
+		// do the following hpay for github expected answer:
+		double hPay = loan;
     	double midPay = (lPay + hPay) / 2;
     	double endBal = endBalance(loan, rate, n, midPay);
-    		while (Math.abs(endBal) > epsilon) {
+    		/*
+			// original - optimized version
+			while (Math.abs(endBal) > epsilon) {
+    			iterationCounter++;
+    			if (0 < endBal) {
+    				lPay = midPay;
+    			} else {
+    				hPay = midPay;
+    			}
+    			midPay = (lPay + hPay) / 2;
+    			endBal = endBalance(loan, rate, n, midPay);
+    		}
+			*/
+			// underneath is the version for github answers
+			while (hPay - lPay > epsilon) {
     			iterationCounter++;
     			if (0 < endBal) {
     				lPay = midPay;
