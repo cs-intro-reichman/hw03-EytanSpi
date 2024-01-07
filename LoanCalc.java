@@ -52,7 +52,7 @@ public class LoanCalc {
     /**
 	* Uses bisection search to compute an approximation of the periodical payment 
 	* that will bring the ending balance of a loan close to 0.
-	* Given: the sum of theloan, the periodical interest rate (as a percentage),
+	* Given: the sum of the loan, the periodical interest rate (as a percentage),
 	* the number of periods (n), and epsilon, a tolerance level.
 	*/
 	// Side effect: modifies the class variable iterationCounter.
@@ -65,30 +65,30 @@ public class LoanCalc {
 		double hPay = loan;
     	double midPay = (lPay + hPay) / 2;
     	double endBal = endBalance(loan, rate, n, midPay);
-    		/*
-			// original - optimized version
-			while (Math.abs(endBal) > epsilon) {
-    			iterationCounter++;
-    			if (0 < endBal) {
-    				lPay = midPay;
-    			} else {
-    				hPay = midPay;
-    			}
-    			midPay = (lPay + hPay) / 2;
-    			endBal = endBalance(loan, rate, n, midPay);
-    		}
-			*/
-			// underneath is the version for github answers
-			while (hPay - lPay > epsilon) {
-    			iterationCounter++;
-    			if (0 < endBal) {
-    				lPay = midPay;
-    			} else {
-    				hPay = midPay;
-    			}
-    			midPay = (lPay + hPay) / 2;
-    			endBal = endBalance(loan, rate, n, midPay);
-    		}
+		/*
+		// original - optimized version
+		while (Math.abs(endBal) > epsilon) {
+			iterationCounter++;
+			if (0 < endBal) {
+				lPay = midPay;
+			} else {
+				hPay = midPay;
+			}
+			midPay = (lPay + hPay) / 2;
+			endBal = endBalance(loan, rate, n, midPay);
+		}
+		*/
+		// underneath is the version for github answers
+		while (hPay - lPay > epsilon) {
+			iterationCounter++;
+			if (0 < endBal) {
+				lPay = midPay;
+			} else {
+				hPay = midPay;
+			}
+			midPay = (lPay + hPay) / 2;
+			endBal = endBalance(loan, rate, n, midPay);
+		}
     	return midPay;
     }
 	
